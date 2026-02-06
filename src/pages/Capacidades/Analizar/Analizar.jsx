@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { api } from '../../../services/api'
 import './Analizar.css'
 
 const tiposConsulta = [
@@ -37,6 +38,7 @@ function Analizar() {
         urgencia: 'normal'
     })
     const [errors, setErrors] = useState({})
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -73,13 +75,30 @@ function Analizar() {
         return Object.keys(newErrors).length === 0
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         if (validate()) {
-            // TODO: Enviar a la API
-            console.log('Datos válidos:', formData)
-            // Por ahora, simulamos navegación a resultado
-            navigate('/resultado', { state: { capacidad: 'analizar', data: formData } })
+            setIsLoading(true)
+            setErrors({})
+
+            try {
+                const response = await api.analizarCaso(formData)
+
+                if (response.success) {
+                    navigate('/resultado', {
+                        state: {
+                            capacidad: 'analizar',
+                            data: response.data
+                        }
+                    })
+                } else {
+                    setErrors({ api: response.error || 'Error al procesar la consulta' })
+                }
+            } catch (error) {
+                setErrors({ api: 'Error de conexión. Intente nuevamente.' })
+            } finally {
+                setIsLoading(false)
+            }
         }
     }
 
