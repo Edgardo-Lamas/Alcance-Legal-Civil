@@ -1,0 +1,53 @@
+{
+    "id": "RC-EXT-014",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Hecho de tercero como eximente",
+    "regla_general": "El hecho de un tercero por quien no se debe responder, que reúne los caracteres del caso fortuito, exime de responsabilidad al demandado.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1731"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "constante",
+                "caracter": "mayoritario"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Tercero ajeno a la esfera de responsabilidad del demandado",
+        "Hecho del tercero con caracteres de caso fortuito",
+        "Nexo causal exclusivo entre hecho del tercero y daño"
+    ],
+    "exclusiones_comunes": [
+        "Terceros dependientes del demandado",
+        "Hechos de terceros previsibles o evitables",
+        "Concurrencia parcial de responsabilidad"
+    ],
+    "riesgos_procesales": [
+        "No identificar al tercero con precisión",
+        "Invocar hecho de tercero sin acreditar caracteres de caso fortuito",
+        "Pretender exoneración cuando existe responsabilidad concurrente"
+    ],
+    "nivel_autoridad": "camara_nacional",
+    "limitaciones": "Equiparado al caso fortuito en sus requisitos. Aplicación restrictiva.",
+    "tags": [
+        "eximente",
+        "hecho_tercero",
+        "ruptura_nexo",
+        "tercero_ajeno"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

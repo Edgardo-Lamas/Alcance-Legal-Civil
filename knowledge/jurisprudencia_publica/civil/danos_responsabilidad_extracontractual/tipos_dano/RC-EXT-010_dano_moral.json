@@ -1,0 +1,60 @@
+{
+    "id": "RC-EXT-010",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Daño moral y su acreditación",
+    "regla_general": "El daño moral puede presumirse in re ipsa cuando existe lesión a derechos personalísimos. En otros supuestos, debe ser acreditado por quien lo invoca.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1741"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "constante",
+                "caracter": "mayoritario"
+            },
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CSJN",
+                "alcance": "Doctrina reiterada",
+                "periodo": "2000-presente",
+                "caracter": "mayoritario"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Afectación a la esfera íntima, espiritual o afectiva",
+        "Legitimación del reclamante (damnificado directo o indirecto según ley)",
+        "Nexo causal con el hecho dañoso"
+    ],
+    "exclusiones_comunes": [
+        "Meras molestias o incomodidades ordinarias",
+        "Disgusto por perjuicio patrimonial sin proyección espiritual",
+        "Reclamantes sin legitimación activa"
+    ],
+    "riesgos_procesales": [
+        "Confusión entre daño moral y daño psicológico",
+        "Falta de fundamentación en supuestos no presumibles",
+        "Pretensión de legitimación no reconocida legalmente"
+    ],
+    "nivel_autoridad": "camara_nacional",
+    "limitaciones": "No indica montos ni parámetros de cuantificación. Criterio de procedencia, no de monto.",
+    "tags": [
+        "dano_moral",
+        "derechos_personalisimos",
+        "in_re_ipsa",
+        "extrapatrimonial"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

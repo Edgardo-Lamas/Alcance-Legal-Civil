@@ -1,0 +1,148 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Criterio Jurídico PMV",
+    "type": "object",
+    "required": [
+        "id",
+        "instituto",
+        "subtipo",
+        "criterio",
+        "regla_general",
+        "fuentes",
+        "nivel_autoridad"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "pattern": "^RC-EXT-[0-9]{3}$|^RC-EXT-ADV$"
+        },
+        "instituto": {
+            "type": "string",
+            "const": "responsabilidad_civil"
+        },
+        "subtipo": {
+            "type": "string",
+            "const": "extracontractual"
+        },
+        "criterio": {
+            "type": "string",
+            "minLength": 10
+        },
+        "regla_general": {
+            "type": "string",
+            "minLength": 20
+        },
+        "fuentes": {
+            "type": "object",
+            "properties": {
+                "normativas": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "tipo",
+                            "cuerpo",
+                            "articulos"
+                        ],
+                        "properties": {
+                            "tipo": {
+                                "enum": [
+                                    "codigo",
+                                    "ley",
+                                    "decreto"
+                                ]
+                            },
+                            "cuerpo": {
+                                "type": "string"
+                            },
+                            "articulos": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "vigencia": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "jurisprudenciales": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "tipo",
+                            "tribunal"
+                        ],
+                        "properties": {
+                            "tipo": {
+                                "enum": [
+                                    "criterio_reiterado",
+                                    "fallo_plenario",
+                                    "doctrina_legal"
+                                ]
+                            },
+                            "tribunal": {
+                                "type": "string"
+                            },
+                            "alcance": {
+                                "type": "string"
+                            },
+                            "periodo": {
+                                "type": "string"
+                            },
+                            "caracter": {
+                                "enum": [
+                                    "mayoritario",
+                                    "unanime",
+                                    "dividido"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "condiciones_aplicacion": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "exclusiones_comunes": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "riesgos_procesales": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "nivel_autoridad": {
+            "enum": [
+                "corte",
+                "camara_nacional",
+                "reiterado"
+            ]
+        },
+        "limitaciones": {
+            "type": "string"
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "version": {
+            "type": "string"
+        },
+        "fecha_actualizacion": {
+            "type": "string"
+        }
+    }
+}

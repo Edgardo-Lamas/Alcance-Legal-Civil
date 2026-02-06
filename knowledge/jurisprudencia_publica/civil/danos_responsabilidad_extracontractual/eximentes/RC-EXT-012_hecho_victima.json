@@ -1,0 +1,52 @@
+{
+    "id": "RC-EXT-012",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Hecho de la víctima como eximente",
+    "regla_general": "El hecho del damnificado que contribuye a causar el daño puede constituir eximente total o parcial de responsabilidad, según su incidencia causal.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1729"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "constante",
+                "caracter": "unanime"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Conducta del damnificado con incidencia causal en el daño",
+        "Conducta imputable al damnificado (no mera participación material)",
+        "Alegación y prueba por el demandado"
+    ],
+    "exclusiones_comunes": [
+        "Mera exposición al riesgo sin conducta activa",
+        "Actos del damnificado sin relevancia causal"
+    ],
+    "riesgos_procesales": [
+        "No alegar el hecho de la víctima en tiempo oportuno",
+        "No producir prueba de la conducta contributiva",
+        "Confundir concurrencia de culpas con exoneración total"
+    ],
+    "nivel_autoridad": "reiterado",
+    "limitaciones": "No establece porcentajes de distribución de responsabilidad. Requiere análisis del caso concreto.",
+    "tags": [
+        "eximente",
+        "hecho_victima",
+        "concurrencia_culpas",
+        "ruptura_nexo"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

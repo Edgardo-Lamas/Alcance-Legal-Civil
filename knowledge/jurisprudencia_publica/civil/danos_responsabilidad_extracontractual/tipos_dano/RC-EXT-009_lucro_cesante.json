@@ -1,0 +1,53 @@
+{
+    "id": "RC-EXT-009",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Lucro cesante como rubro indemnizatorio",
+    "regla_general": "El lucro cesante comprende el beneficio económico esperado de acuerdo con la probabilidad objetiva de su obtención, frustrado por el hecho dañoso.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1738"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "constante",
+                "caracter": "mayoritario"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Ganancia o beneficio que razonablemente se habría obtenido",
+        "Probabilidad objetiva (no mera posibilidad) de obtención",
+        "Frustración directa por el hecho dañoso"
+    ],
+    "exclusiones_comunes": [
+        "Ganancias meramente hipotéticas",
+        "Expectativas sin base objetiva",
+        "Beneficios futuros especulativos"
+    ],
+    "riesgos_procesales": [
+        "No distinguir lucro cesante de pérdida de chance",
+        "Falta de prueba de ingresos previos o proyectados",
+        "Cuantificación excesiva rechazada judicialmente"
+    ],
+    "nivel_autoridad": "reiterado",
+    "limitaciones": "No indica parámetros de cálculo. Requiere prueba específica de ganancias frustradas.",
+    "tags": [
+        "lucro_cesante",
+        "ganancia_frustrada",
+        "rubro",
+        "probabilidad"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

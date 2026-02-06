@@ -1,0 +1,52 @@
+{
+    "id": "RC-EXT-015",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Plazo de prescripción de la acción de daños",
+    "regla_general": "El plazo de prescripción de la acción por daños derivados de responsabilidad civil es de tres años.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "2561"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "2015-presente",
+                "caracter": "unanime"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Acción civil por reparación de daños",
+        "Responsabilidad extracontractual"
+    ],
+    "exclusiones_comunes": [
+        "Acciones de simulación (2 años)",
+        "Reclamo de daños derivados de delitos de lesa humanidad (imprescriptibles)",
+        "Acciones reales (plazos específicos)"
+    ],
+    "riesgos_procesales": [
+        "Cómputo erróneo del inicio del plazo",
+        "No advertir causales de suspensión o interrupción",
+        "Confundir prescripción con caducidad"
+    ],
+    "nivel_autoridad": "reiterado",
+    "limitaciones": "No resuelve controversias específicas sobre inicio del cómputo. Ver criterio RC-EXT-016.",
+    "tags": [
+        "prescripcion",
+        "plazo",
+        "tres_anos",
+        "accion_danos"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

@@ -1,0 +1,63 @@
+{
+    "id": "RC-EXT-ADV",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Advertencias obligatorias del sistema",
+    "regla_general": "Este sistema proporciona asistencia técnica basada en criterios generales. NO constituye asesoramiento jurídico profesional.",
+    "fuentes": {
+        "normativas": [],
+        "jurisprudenciales": []
+    },
+    "advertencias_obligatorias": [
+        {
+            "codigo": "ADV-001",
+            "texto": "Este análisis NO constituye opinión legal ni consejo profesional.",
+            "mostrar_siempre": true
+        },
+        {
+            "codigo": "ADV-002",
+            "texto": "La evaluación de viabilidad es orientativa y probabilística, no determinante del resultado judicial.",
+            "mostrar_siempre": true
+        },
+        {
+            "codigo": "ADV-003",
+            "texto": "Los criterios jurisprudenciales citados son de carácter general. Verificar vigencia y aplicabilidad al caso concreto.",
+            "mostrar_siempre": true
+        },
+        {
+            "codigo": "ADV-004",
+            "texto": "La precisión del análisis depende de la completitud y exactitud de la información proporcionada.",
+            "mostrar_siempre": true
+        },
+        {
+            "codigo": "ADV-005",
+            "texto": "Factores no declarados pueden alterar sustancialmente las conclusiones.",
+            "mostrar_siempre": true
+        },
+        {
+            "codigo": "ADV-006",
+            "texto": "Este sistema NO proporciona montos indemnizatorios ni cuantificaciones de daños.",
+            "mostrar_siempre": true
+        },
+        {
+            "codigo": "ADV-007",
+            "texto": "La decisión final sobre estrategia procesal corresponde exclusivamente al profesional actuante.",
+            "mostrar_siempre": true
+        }
+    ],
+    "condiciones_aplicacion": [
+        "SIEMPRE mostrar en todo resultado del sistema"
+    ],
+    "exclusiones_comunes": [],
+    "riesgos_procesales": [],
+    "nivel_autoridad": "reiterado",
+    "limitaciones": "Meta-criterio. Define los límites del sistema, no reglas jurídicas.",
+    "tags": [
+        "advertencia",
+        "limitacion",
+        "meta",
+        "sistema"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

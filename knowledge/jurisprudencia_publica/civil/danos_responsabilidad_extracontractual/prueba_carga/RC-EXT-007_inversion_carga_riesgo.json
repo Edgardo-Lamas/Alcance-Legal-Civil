@@ -1,0 +1,61 @@
+{
+    "id": "RC-EXT-007",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Inversión de carga probatoria en actividades riesgosas",
+    "regla_general": "En supuestos de responsabilidad objetiva por riesgo creado, el damnificado solo debe probar el daño y la intervención de la cosa riesgosa. El sindicado como responsable debe probar la causa ajena para eximirse.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1757",
+                    "1758"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CSJN",
+                "alcance": "Doctrina reiterada",
+                "periodo": "1986-presente",
+                "caracter": "unanime"
+            },
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "constante",
+                "caracter": "unanime"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Intervención activa de cosa riesgosa o viciosa",
+        "Actividad especialmente peligrosa por su naturaleza",
+        "Daño causado por el riesgo o vicio de la cosa"
+    ],
+    "exclusiones_comunes": [
+        "Cosas inertes sin participación activa",
+        "Daño no vinculado al riesgo específico de la cosa",
+        "Actividades ordinarias sin peligrosidad especial"
+    ],
+    "riesgos_procesales": [
+        "Confundir riesgo con cualquier uso de cosas",
+        "No distinguir responsabilidad del dueño del guardián",
+        "Omitir alegación específica del factor objetivo"
+    ],
+    "nivel_autoridad": "corte",
+    "limitaciones": "No define qué actividades son riesgosas en abstracto. Requiere análisis del caso concreto.",
+    "tags": [
+        "inversion_carga",
+        "riesgo_creado",
+        "cosa_riesgosa",
+        "actividad_peligrosa"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

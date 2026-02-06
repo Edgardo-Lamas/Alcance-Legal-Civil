@@ -1,0 +1,54 @@
+{
+    "id": "RC-EXT-001",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Antijuridicidad como presupuesto de responsabilidad",
+    "regla_general": "Cualquier acción u omisión que causa un daño a otro es antijurídica si no está justificada.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1717",
+                    "1718"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "2015-presente",
+                "caracter": "unanime"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Existencia de acción u omisión imputable al agente",
+        "Ausencia de causa de justificación legal"
+    ],
+    "exclusiones_comunes": [
+        "Ejercicio regular de un derecho propio (art. 1718 inc. a)",
+        "Legítima defensa propia o de terceros (art. 1718 inc. b)",
+        "Estado de necesidad justificante (art. 1718 inc. c)"
+    ],
+    "riesgos_procesales": [
+        "No distinguir antijuridicidad formal de material",
+        "No invocar causa de justificación en tiempo procesal oportuno",
+        "Omitir prueba de la causa de justificación alegada"
+    ],
+    "nivel_autoridad": "reiterado",
+    "limitaciones": "No determina por sí sola la procedencia del reclamo. Requiere concurrencia de los demás presupuestos.",
+    "tags": [
+        "antijuridicidad",
+        "presupuesto",
+        "justificacion",
+        "accion",
+        "omision"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

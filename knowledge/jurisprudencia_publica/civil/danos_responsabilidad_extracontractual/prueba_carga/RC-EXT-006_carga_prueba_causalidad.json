@@ -1,0 +1,60 @@
+{
+    "id": "RC-EXT-006",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Carga de la prueba del nexo causal",
+    "regla_general": "Corresponde al actor demostrar la relación de causalidad entre el hecho del demandado y el daño sufrido.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CPCCN",
+                "articulos": [
+                    "377"
+                ],
+                "vigencia": "vigente"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "constante",
+                "caracter": "unanime"
+            },
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CSJN",
+                "alcance": "Doctrina reiterada",
+                "periodo": "constante",
+                "caracter": "unanime"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Responsabilidad basada en factor subjetivo",
+        "Ausencia de presunción legal de causalidad",
+        "Demanda por daños y perjuicios"
+    ],
+    "exclusiones_comunes": [
+        "Supuestos de responsabilidad objetiva con inversión",
+        "Obligaciones de resultado incumplidas",
+        "Casos con presunción legal de nexo causal"
+    ],
+    "riesgos_procesales": [
+        "Rechazo de demanda por falta de acreditación del nexo",
+        "Dificultad probatoria en causalidad médica o técnica",
+        "No producir prueba pericial cuando corresponde"
+    ],
+    "nivel_autoridad": "reiterado",
+    "limitaciones": "No cubre supuestos especiales de inversión de carga. Regla general aplicable a responsabilidad subjetiva.",
+    "tags": [
+        "carga_prueba",
+        "nexo_causal",
+        "causalidad",
+        "onus_probandi"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

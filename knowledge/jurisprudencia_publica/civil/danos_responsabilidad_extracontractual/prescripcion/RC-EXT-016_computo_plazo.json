@@ -1,0 +1,60 @@
+{
+    "id": "RC-EXT-016",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Cómputo del plazo de prescripción (dies a quo)",
+    "regla_general": "El plazo de prescripción comienza a correr desde que la prestación es exigible, lo cual en daños significa desde el conocimiento del daño por el damnificado.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "2554"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CSJN",
+                "alcance": "Doctrina reiterada",
+                "periodo": "1990-presente",
+                "caracter": "mayoritario"
+            },
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "2015-presente",
+                "caracter": "mayoritario"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Conocimiento real o razonablemente cognoscible del daño",
+        "Posibilidad jurídica de accionar",
+        "Determinación del responsable"
+    ],
+    "exclusiones_comunes": [
+        "Daños continuados (cómputo especial)",
+        "Imposibilidad jurídica de accionar (suspensión)",
+        "Menores o incapaces (reglas especiales)"
+    ],
+    "riesgos_procesales": [
+        "Alegar conocimiento tardío sin elementos de prueba",
+        "Confundir fecha del hecho con fecha de conocimiento del daño",
+        "No invocar causales de suspensión aplicables"
+    ],
+    "nivel_autoridad": "corte",
+    "limitaciones": "Criterio general. Daños de manifestación diferida o continuada pueden tener tratamiento especial.",
+    "tags": [
+        "prescripcion",
+        "dies_a_quo",
+        "conocimiento_dano",
+        "computo"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

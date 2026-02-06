@@ -1,0 +1,61 @@
+{
+    "id": "RC-EXT-003",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Teoría de la causalidad adecuada",
+    "regla_general": "Son reparables las consecuencias dañosas que acostumbran suceder según el curso natural y ordinario de las cosas.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1726",
+                    "1727"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CSJN",
+                "alcance": "Doctrina reiterada",
+                "periodo": "1950-presente",
+                "caracter": "unanime"
+            },
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Plenario",
+                "periodo": "2015-presente",
+                "caracter": "unanime"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Nexo fáctico entre el hecho y el daño",
+        "Previsibilidad objetiva de la consecuencia dañosa",
+        "Ausencia de interrupción del nexo causal"
+    ],
+    "exclusiones_comunes": [
+        "Consecuencias extraordinarias o imprevisibles",
+        "Daños remotos sin conexión directa con el hecho",
+        "Concausas que absorben la relación causal"
+    ],
+    "riesgos_procesales": [
+        "No distinguir causalidad de culpabilidad",
+        "Falta de prueba específica del nexo causal",
+        "Omitir alegación de concurrencia de causas"
+    ],
+    "nivel_autoridad": "corte",
+    "limitaciones": "No resuelve cuantificación del daño. Solo determina atribuibilidad de consecuencias al hecho generador.",
+    "tags": [
+        "causalidad",
+        "nexo_causal",
+        "causalidad_adecuada",
+        "previsibilidad"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

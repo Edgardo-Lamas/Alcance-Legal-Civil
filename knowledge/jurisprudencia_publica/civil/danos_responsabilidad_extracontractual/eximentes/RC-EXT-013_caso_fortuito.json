@@ -1,0 +1,54 @@
+{
+    "id": "RC-EXT-013",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Caso fortuito y fuerza mayor como eximentes",
+    "regla_general": "El caso fortuito o fuerza mayor exime de responsabilidad cuando el hecho no pudo ser previsto o que, previsto, no pudo ser evitado.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1730",
+                    "1733"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CSJN",
+                "alcance": "Doctrina reiterada",
+                "periodo": "constante",
+                "caracter": "unanime"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Hecho imprevisible o inevitable",
+        "Hecho externo al demandado",
+        "Nexo causal exclusivo con el daño"
+    ],
+    "exclusiones_comunes": [
+        "Hechos previsibles con diligencia ordinaria",
+        "Eventos que podían evitarse con medidas razonables",
+        "Responsabilidad por riesgo cuando la ley lo excluye expresamente"
+    ],
+    "riesgos_procesales": [
+        "Invocar caso fortuito sin acreditar imprevisibilidad",
+        "Confundir dificultad con imposibilidad",
+        "No distinguir caso fortuito de hecho de tercero"
+    ],
+    "nivel_autoridad": "corte",
+    "limitaciones": "Configuración estricta. Requiere prueba fehaciente de los requisitos.",
+    "tags": [
+        "eximente",
+        "caso_fortuito",
+        "fuerza_mayor",
+        "imprevisibilidad"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

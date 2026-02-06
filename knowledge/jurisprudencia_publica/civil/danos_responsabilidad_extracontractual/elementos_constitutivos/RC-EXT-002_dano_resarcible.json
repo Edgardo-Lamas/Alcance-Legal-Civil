@@ -1,0 +1,56 @@
+{
+    "id": "RC-EXT-002",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Daño resarcible como requisito esencial",
+    "regla_general": "Hay daño cuando se lesiona un derecho o un interés no reprobado por el ordenamiento jurídico, que tenga por objeto la persona, el patrimonio, o un derecho de incidencia colectiva.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1737",
+                    "1738",
+                    "1739"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "2015-presente",
+                "caracter": "unanime"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Lesión a un derecho o interés lícito",
+        "Carácter cierto del daño (no hipotético)",
+        "Carácter personal del daño (afectación al reclamante)",
+        "Subsistencia del daño al momento del reclamo"
+    ],
+    "exclusiones_comunes": [
+        "Daños hipotéticos o eventuales",
+        "Intereses no tutelados por el ordenamiento",
+        "Daños ya reparados integralmente"
+    ],
+    "riesgos_procesales": [
+        "No acreditar certeza del daño",
+        "Confundir daño patrimonial con extrapatrimonial",
+        "Omitir prueba de subsistencia del perjuicio"
+    ],
+    "nivel_autoridad": "reiterado",
+    "limitaciones": "No resuelve cuantificación. Solo determina existencia del daño como categoría jurídica.",
+    "tags": [
+        "dano",
+        "dano_resarcible",
+        "interes_legitimo",
+        "certeza"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

@@ -1,0 +1,68 @@
+{
+    "_meta": {
+        "paquete": "responsabilidad_civil_extracontractual",
+        "alcance": "criterios_generales",
+        "jurisdiccion": "argentina_nacional",
+        "vigencia": "ccyc_2015",
+        "advertencia": "Este paquete contiene exclusivamente criterios generales de aplicación uniforme. No incluye excepciones provinciales, interpretaciones doctrinarias ni cuantificaciones.",
+        "congelado": true,
+        "version_esquema": "2.0",
+        "fecha_creacion": "2026-02-06",
+        "criterios_incluidos": 17
+    },
+    "categorias": [
+        {
+            "id": "elementos_constitutivos",
+            "nombre": "Elementos Constitutivos",
+            "criterios": [
+                "RC-EXT-001",
+                "RC-EXT-002",
+                "RC-EXT-003",
+                "RC-EXT-004"
+            ]
+        },
+        {
+            "id": "prueba_carga",
+            "nombre": "Prueba y Carga",
+            "criterios": [
+                "RC-EXT-005",
+                "RC-EXT-006",
+                "RC-EXT-007"
+            ]
+        },
+        {
+            "id": "tipos_dano",
+            "nombre": "Tipos de Daño",
+            "criterios": [
+                "RC-EXT-008",
+                "RC-EXT-009",
+                "RC-EXT-010",
+                "RC-EXT-011"
+            ]
+        },
+        {
+            "id": "eximentes",
+            "nombre": "Eximentes",
+            "criterios": [
+                "RC-EXT-012",
+                "RC-EXT-013",
+                "RC-EXT-014"
+            ]
+        },
+        {
+            "id": "prescripcion",
+            "nombre": "Prescripción",
+            "criterios": [
+                "RC-EXT-015",
+                "RC-EXT-016"
+            ]
+        },
+        {
+            "id": "advertencias",
+            "nombre": "Advertencias del Sistema",
+            "criterios": [
+                "RC-EXT-ADV"
+            ]
+        }
+    ]
+}

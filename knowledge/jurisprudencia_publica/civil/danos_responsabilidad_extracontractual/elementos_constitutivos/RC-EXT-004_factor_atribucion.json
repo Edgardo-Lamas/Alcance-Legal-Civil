@@ -1,0 +1,57 @@
+{
+    "id": "RC-EXT-004",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Factor de atribución de responsabilidad",
+    "regla_general": "La atribución de un daño al responsable puede basarse en factores subjetivos (dolo o culpa) u objetivos (riesgo creado, garantía, equidad).",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1721",
+                    "1722",
+                    "1723",
+                    "1724",
+                    "1725"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "2015-presente",
+                "caracter": "unanime"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Identificación del factor aplicable al caso (subjetivo u objetivo)",
+        "Para factores subjetivos: acreditación de dolo o culpa",
+        "Para factores objetivos: encuadramiento en supuesto legal específico"
+    ],
+    "exclusiones_comunes": [
+        "Responsabilidad sin factor de atribución identificable",
+        "Pretensión de aplicar factor objetivo sin base normativa"
+    ],
+    "riesgos_procesales": [
+        "Error en la invocación del factor de atribución",
+        "No distinguir carga probatoria según tipo de factor",
+        "Confundir responsabilidad objetiva con presunción de culpa"
+    ],
+    "nivel_autoridad": "reiterado",
+    "limitaciones": "No determina qué factor aplica a un caso concreto. Requiere análisis de la situación fáctica específica.",
+    "tags": [
+        "factor_atribucion",
+        "culpa",
+        "dolo",
+        "riesgo_creado",
+        "responsabilidad_objetiva"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

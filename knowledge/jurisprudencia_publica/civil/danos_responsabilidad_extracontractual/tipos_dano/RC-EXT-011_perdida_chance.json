@@ -1,0 +1,53 @@
+{
+    "id": "RC-EXT-011",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Pérdida de chance como categoría autónoma",
+    "regla_general": "La pérdida de chance es indemnizable cuando existe una probabilidad cierta y significativa de obtener un beneficio o evitar un perjuicio, frustrada por el hecho dañoso. Se indemniza la chance, no el beneficio íntegro.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1739"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "2000-presente",
+                "caracter": "mayoritario"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Probabilidad cierta y significativa (no mera posibilidad)",
+        "Frustración definitiva de la oportunidad",
+        "Nexo causal entre el hecho y la pérdida de la chance"
+    ],
+    "exclusiones_comunes": [
+        "Oportunidades remotas o altamente inciertas",
+        "Meras expectativas sin base objetiva",
+        "Chances ya materializadas (que se convierten en daño cierto)"
+    ],
+    "riesgos_procesales": [
+        "Confundir pérdida de chance con lucro cesante",
+        "Pretender indemnización del beneficio completo",
+        "No acreditar probabilidad objetiva de la chance"
+    ],
+    "nivel_autoridad": "camara_nacional",
+    "limitaciones": "No establece porcentajes de probabilidad ni métodos de cuantificación. Criterio conceptual.",
+    "tags": [
+        "perdida_chance",
+        "probabilidad",
+        "oportunidad_frustrada",
+        "rubro"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

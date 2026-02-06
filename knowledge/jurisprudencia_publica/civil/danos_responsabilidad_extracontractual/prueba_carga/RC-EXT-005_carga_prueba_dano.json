@@ -1,0 +1,61 @@
+{
+    "id": "RC-EXT-005",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Carga de la prueba del daño",
+    "regla_general": "Quien alega un daño debe probarlo. La existencia y magnitud del perjuicio debe ser acreditada por quien lo invoca.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CPCCN",
+                "articulos": [
+                    "377"
+                ],
+                "vigencia": "vigente"
+            },
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1744"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "constante",
+                "caracter": "unanime"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Actor que pretende resarcimiento",
+        "Alegación de daño patrimonial o extrapatrimonial",
+        "Proceso donde no opere inversión de carga"
+    ],
+    "exclusiones_comunes": [
+        "Supuestos de daño moral in re ipsa",
+        "Casos con inversión de carga probatoria",
+        "Daños presumidos por ley"
+    ],
+    "riesgos_procesales": [
+        "Rechazo de demanda por falta de prueba del daño",
+        "Reducción de rubros por acreditación insuficiente",
+        "No ofrecer prueba pertinente en tiempo oportuno"
+    ],
+    "nivel_autoridad": "reiterado",
+    "limitaciones": "No indica medios probatorios específicos. Regla general sujeta a excepciones legales.",
+    "tags": [
+        "carga_prueba",
+        "onus_probandi",
+        "dano",
+        "acreditacion"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}

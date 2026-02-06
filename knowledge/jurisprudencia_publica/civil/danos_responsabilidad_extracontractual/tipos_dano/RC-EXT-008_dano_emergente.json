@@ -1,0 +1,53 @@
+{
+    "id": "RC-EXT-008",
+    "instituto": "responsabilidad_civil",
+    "subtipo": "extracontractual",
+    "criterio": "Daño emergente como rubro indemnizatorio",
+    "regla_general": "El daño emergente comprende el valor de la pérdida sufrida, es decir, el empobrecimiento efectivo del patrimonio del damnificado.",
+    "fuentes": {
+        "normativas": [
+            {
+                "tipo": "codigo",
+                "cuerpo": "CCyC",
+                "articulos": [
+                    "1738"
+                ],
+                "vigencia": "2015-08-01"
+            }
+        ],
+        "jurisprudenciales": [
+            {
+                "tipo": "criterio_reiterado",
+                "tribunal": "CNCiv",
+                "alcance": "Salas diversas",
+                "periodo": "constante",
+                "caracter": "unanime"
+            }
+        ]
+    },
+    "condiciones_aplicacion": [
+        "Gasto o pérdida efectivamente producida",
+        "Vinculación directa con el hecho dañoso",
+        "Acreditación documental o pericial del monto"
+    ],
+    "exclusiones_comunes": [
+        "Gastos no vinculados causalmente al hecho",
+        "Erogaciones voluntarias no necesarias",
+        "Costos futuros no devengados"
+    ],
+    "riesgos_procesales": [
+        "Falta de comprobantes de los gastos",
+        "No acreditar relación con el hecho dañoso",
+        "Confusión con lucro cesante"
+    ],
+    "nivel_autoridad": "reiterado",
+    "limitaciones": "No establece montos ni parámetros de cuantificación. Requiere prueba concreta de cada rubro.",
+    "tags": [
+        "dano_emergente",
+        "perdida_patrimonial",
+        "rubro",
+        "cuantificacion"
+    ],
+    "version": "1.0",
+    "fecha_actualizacion": "2026-02-06"
+}
