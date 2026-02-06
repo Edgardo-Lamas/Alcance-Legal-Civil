@@ -1,0 +1,206 @@
+/* Dashboard Container */
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header */
+.dashboard__header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a2744;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.02em;
+}
+
+.dashboard__subtitle {
+    font-size: 1rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Aviso de Fuero */
+.dashboard__aviso {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+}
+
+.dashboard__aviso-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #b45309;
+}
+
+.dashboard__aviso-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.dashboard__aviso p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #78350f;
+    line-height: 1.5;
+}
+
+.dashboard__aviso strong {
+    font-weight: 600;
+}
+
+/* Grid de Capacidades */
+.dashboard__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Tarjeta de Capacidad */
+.capacidad-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.capacidad-card:hover {
+    border-color: #c9a227;
+    box-shadow: 0 8px 24px rgba(26, 39, 68, 0.12);
+    transform: translateY(-2px);
+}
+
+.capacidad-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.capacidad-card__icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #1a2744 0%, #2d3a52 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c9a227;
+}
+
+.capacidad-card__icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.capacidad-card__badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #7c3aed;
+    background: #ede9fe;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.capacidad-card__titulo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a2744;
+    margin: 0 0 0.5rem 0;
+}
+
+.capacidad-card__descripcion {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0 0 1.25rem 0;
+}
+
+.capacidad-card__materias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.capacidad-card__materia {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 0.25rem 0.625rem;
+    border-radius: 100px;
+}
+
+.capacidad-card__action {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #c9a227;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.capacidad-card__action svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+}
+
+.capacidad-card:hover .capacidad-card__action svg {
+    transform: translateX(4px);
+}
+
+/* Footer */
+.dashboard__footer {
+    text-align: center;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.dashboard__footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.dashboard__footer strong {
+    color: #1a2744;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard {
+        padding: 1.5rem 1rem;
+    }
+
+    .dashboard__title {
+        font-size: 1.5rem;
+    }
+
+    .dashboard__grid {
+        grid-template-columns: 1fr;
+    }
+}
