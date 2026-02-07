@@ -182,10 +182,13 @@ function evaluarAntijuridicidad(datos) {
         'violación', 'ilícito', 'responsable', 'culpa'
     ]
 
-    // Indicadores de causas de justificación
+    // Indicadores de causas de justificación (incluye variantes sin acentos)
     const indicadoresJustificacion = [
-        'legítima defensa', 'estado de necesidad', 'ejercicio regular',
-        'derecho propio', 'autorización'
+        'legítima defensa', 'legitima defensa',
+        'estado de necesidad', 'ejercicio regular',
+        'derecho propio', 'autorización', 'autorizacion',
+        'defensa propia', 'se defendio', 'se defendió',
+        'actuó en defensa', 'actuo en defensa'
     ]
 
     const tieneIndicadoresPositivos = indicadoresPositivos.some(i => texto.includes(i))
