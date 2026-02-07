@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { useState } from 'react'
+import DisclaimerModal from '../DisclaimerModal'
 import './Navigation.css'
 
 const navItems = [
@@ -65,6 +66,7 @@ const icons = {
 
 function Navigation() {
     const [isOpen, setIsOpen] = useState(false)
+    const [showDisclaimer, setShowDisclaimer] = useState(false)
     const location = useLocation()
 
     const toggleNav = () => setIsOpen(!isOpen)
@@ -107,12 +109,23 @@ function Navigation() {
                 </div>
 
                 <div className="navigation__footer">
+                    <button
+                        className="navigation__legal-link"
+                        onClick={() => setShowDisclaimer(true)}
+                    >
+                        Ver Aviso Legal
+                    </button>
                     <div className="navigation__badge">Fuero Civil</div>
                     <span className="navigation__version">v1.0.0</span>
                 </div>
             </nav>
 
             {isOpen && <div className="navigation__overlay" onClick={closeNav} />}
+
+            <DisclaimerModal
+                isOpen={showDisclaimer}
+                onClose={() => setShowDisclaimer(false)}
+            />
         </>
     )
 }
