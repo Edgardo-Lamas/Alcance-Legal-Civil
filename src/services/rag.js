@@ -109,15 +109,12 @@ const CRITERIOS_V01 = {
     }
 }
 
-// Advertencias obligatorias
-const ADVERTENCIAS_OBLIGATORIAS = [
-    'Este análisis NO constituye opinión legal ni consejo profesional.',
-    'La evaluación de viabilidad es orientativa y probabilística.',
-    'Los criterios citados son de carácter general. Verificar vigencia.',
-    'La precisión depende de la completitud de la información proporcionada.',
-    'Factores no declarados pueden alterar sustancialmente las conclusiones.',
-    'La decisión final corresponde exclusivamente al profesional actuante.'
-]
+// Importar advertencias del disclaimer institucional centralizado
+import {
+    ADVERTENCIAS_OBLIGATORIAS,
+    DISCLAIMER_RAG,
+    DISCLAIMER_API
+} from '../constants/disclaimer.js'
 
 /**
  * Analiza un caso usando los 4 criterios base
@@ -128,7 +125,9 @@ function analizarConCriterios(datosCaso) {
         elementos_faltantes: [],
         riesgos_detectados: [],
         viabilidad: { valor: 0, clasificacion: '', explicacion: '' },
-        advertencias: ADVERTENCIAS_OBLIGATORIAS
+        advertencias: ADVERTENCIAS_OBLIGATORIAS,
+        disclaimer_institucional: DISCLAIMER_API,
+        nota_rag: DISCLAIMER_RAG
     }
 
     // 1. Evaluar antijuridicidad (RC-EXT-001)
