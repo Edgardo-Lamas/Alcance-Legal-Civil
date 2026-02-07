@@ -101,6 +101,43 @@
     list-style: none;
 }
 
+/* Sección de capacidades positivas */
+.disclaimer-content .capacidades {
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.disclaimer-content .capacidades h3 {
+    color: #22c55e;
+}
+
+.disclaimer-content .capacidades li {
+    color: #a7f3d0;
+}
+
+.disclaimer-content .proposito {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(34, 197, 94, 0.2);
+    color: #86efac;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+/* Sección de limitaciones */
+.disclaimer-content .limitaciones {
+    background: rgba(251, 146, 60, 0.08);
+    border: 1px solid rgba(251, 146, 60, 0.2);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.disclaimer-content .limitaciones h3 {
+    color: #fb923c;
+}
+
 .exclusion-responsabilidad {
     background: rgba(239, 68, 68, 0.1);
     border: 1px solid rgba(239, 68, 68, 0.3);

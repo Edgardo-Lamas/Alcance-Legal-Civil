@@ -68,8 +68,18 @@ function DisclaimerAcceptance({ onAccept }) {
                         {DISCLAIMER_COMPLETO.introduccion}
                     </p>
 
-                    <div className="seccion">
-                        <h3>Este sistema NO constituye:</h3>
+                    <div className="seccion capacidades">
+                        <h3>✅ El sistema permite:</h3>
+                        <ul>
+                            {DISCLAIMER_COMPLETO.permite.map((item, i) => (
+                                <li key={i}>✓ {item}</li>
+                            ))}
+                        </ul>
+                        <p className="proposito">{DISCLAIMER_COMPLETO.propositoPositivo}</p>
+                    </div>
+
+                    <div className="seccion limitaciones">
+                        <h3>⚠️ Importante - Este sistema NO constituye:</h3>
                         <ul>
                             {DISCLAIMER_COMPLETO.noConstituye.map((item, i) => (
                                 <li key={i}>❌ {item}</li>

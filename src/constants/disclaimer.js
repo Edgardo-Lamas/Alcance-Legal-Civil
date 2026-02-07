@@ -14,7 +14,18 @@ export const DISCLAIMER_VERSION = '1.0'
  */
 export const DISCLAIMER_COMPLETO = {
     titulo: 'AVISO LEGAL OBLIGATORIO',
-    introduccion: 'Alcance Legal es un sistema de consulta de criterios jurisprudenciales generales de acceso público, correspondientes al derecho civil argentino. Su función es exclusivamente informativa y de apoyo técnico.',
+    introduccion: 'Alcance Legal es un sistema de inteligencia jurídica especializado en criterios jurisprudenciales del derecho civil argentino.',
+
+    permite: [
+        'Consultar criterios de viabilidad basados en jurisprudencia pública',
+        'Identificar elementos constitutivos de responsabilidad civil',
+        'Detectar riesgos procesales antes de iniciar acciones',
+        'Orientar el análisis preliminar de situaciones civiles',
+        'Evaluar la presencia de causales de justificación o eximentes',
+        'Generar reportes estructurados con fundamentos normativos'
+    ],
+
+    propositoPositivo: 'Su función es brindar un insumo técnico de calidad para profesionales del derecho, optimizando la investigación jurisprudencial y reduciendo tiempos de análisis.',
 
     noConstituye: [
         'Asesoramiento legal profesional',
