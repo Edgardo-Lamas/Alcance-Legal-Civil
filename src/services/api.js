@@ -209,14 +209,75 @@ class AlcanceLegalAPI {
     async analizarCaso(data) {
         if (this.config.useMocks) {
             await simulateLatency()
+
+            // Usar RAG local v0.1
+            const { analizarConCriterios, getVersion, ADVERTENCIAS_OBLIGATORIAS } = await import('./rag.js')
+            const analisis = analizarConCriterios(data)
+            const ragVersion = getVersion()
+
+            // Construir respuesta en formato de informe profesional
+            const numeroInforme = `ALC-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 100000)).padStart(6, '0')}`
+
+            // Generar síntesis basada en análisis
+            const elementosPresentes = analisis.elementos_evaluados.filter(e => e.presente)
+            const elementosFaltantes = analisis.elementos_faltantes
+
+            let sintesis = ''
+            if (elementosPresentes.length > 0) {
+                sintesis = `Se identifican ${elementosPresentes.length} de 4 elementos constitutivos de responsabilidad civil: ${elementosPresentes.map(e => e.elemento).join(', ')}.\n\n`
+            }
+            if (elementosFaltantes.length > 0) {
+                sintesis += `Requieren mayor desarrollo: ${elementosFaltantes.map(e => e.elemento).join(', ')}.`
+            }
+
+            // Construir fundamentos desde criterios utilizados
+            const fundamentos = analisis.elementos_evaluados
+                .filter(e => e.fundamento)
+                .map(e => ({
+                    tipo: 'criterio_rag',
+                    fuente: `${e.fundamento.normativo?.[0]?.cuerpo || 'CCyC'} arts. ${e.fundamento.normativo?.[0]?.articulos?.join(', ') || ''}`,
+                    extracto: e.fundamento.criterio,
+                    relevancia: e.observaciones[0] || 'Aplicado al análisis del caso.'
+                }))
+
             return {
                 success: true,
                 data: {
-                    ...MOCK_RESPONSES.analizar,
-                    // Incorporar datos del usuario en la respuesta
-                    _input: {
-                        tipo_caso: data.tipo_caso,
-                        jurisdiccion: data.jurisdiccion
+                    numero_informe: numeroInforme,
+                    fecha_emision: new Date().toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' }),
+                    estado: 'INFORME PRELIMINAR',
+                    estado_detalle: 'Pendiente de validación por el profesional actuante',
+                    version_rag: ragVersion.version,
+                    criterios_aplicados: ragVersion.criterios_activos,
+                    viabilidad: {
+                        valor: analisis.viabilidad.valor,
+                        clasificacion: analisis.viabilidad.clasificacion,
+                        explicacion: analisis.viabilidad.explicacion,
+                        advertencia_metodologica: 'Esta evaluación se basa exclusivamente en la información proporcionada y en los 4 elementos constitutivos de responsabilidad civil. Factores no declarados pueden alterar sustancialmente el pronóstico.'
+                    },
+                    sintesis,
+                    elementos_evaluados: analisis.elementos_evaluados.map(e => ({
+                        elemento: e.elemento,
+                        presente: e.presente,
+                        confianza: e.confianza,
+                        observaciones: e.observaciones
+                    })),
+                    fundamentos,
+                    riesgos: analisis.riesgos_detectados.map((r, idx) => ({
+                        nivel: r.nivel,
+                        codigo: `R-${String(idx + 1).padStart(3, '0')}`,
+                        descripcion: r.descripcion,
+                        fuente: r.fuente,
+                        urgencia: r.nivel === 'alto'
+                    })),
+                    advertencias: {
+                        principal: 'Este informe NO constituye consejo legal definitivo. Es un insumo técnico basado en criterios generales que debe ser validado por el profesional actuante.',
+                        items: ADVERTENCIAS_OBLIGATORIAS
+                    },
+                    _meta: {
+                        rag_version: ragVersion.version,
+                        criterios_activos: ragVersion.criterios_activos.length,
+                        estado_rag: ragVersion.estado
                     }
                 }
             }

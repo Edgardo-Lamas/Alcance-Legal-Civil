@@ -1,0 +1,45 @@
+{
+    "version": "0.1.0",
+    "fecha_congelamiento": "2026-02-06",
+    "estado": "congelado",
+    "alcance": {
+        "instituto": "responsabilidad_civil",
+        "subtipo": "extracontractual",
+        "criterios_activos": [
+            "RC-EXT-001",
+            "RC-EXT-002",
+            "RC-EXT-003",
+            "RC-EXT-004"
+        ],
+        "criterios_pendientes": [
+            "RC-EXT-005",
+            "RC-EXT-006",
+            "RC-EXT-007",
+            "RC-EXT-008",
+            "RC-EXT-009",
+            "RC-EXT-010",
+            "RC-EXT-011",
+            "RC-EXT-012",
+            "RC-EXT-013",
+            "RC-EXT-014",
+            "RC-EXT-015",
+            "RC-EXT-016",
+            "RC-EXT-ADV"
+        ]
+    },
+    "restricciones": {
+        "no_expandir_schema": true,
+        "validar_razonamiento": true,
+        "control_salida": true,
+        "casos_limite_requeridos": true
+    },
+    "proxima_version": {
+        "condicion": "Validación exitosa de razonamiento y control de salida con criterios base",
+        "criterios_a_agregar": [
+            "RC-EXT-005",
+            "RC-EXT-006",
+            "RC-EXT-007"
+        ]
+    },
+    "notas": "Esta versión incluye SOLO los 4 elementos constitutivos de responsabilidad civil extracontractual. No se expande hasta validar comportamiento."
+}
