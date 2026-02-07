@@ -15,10 +15,13 @@
     padding: var(--space-10) var(--space-12);
     max-width: 100%;
     overflow-x: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .page-layout__inner {
     max-width: 900px;
+    width: 100%;
 }
 
 /* Responsive */
