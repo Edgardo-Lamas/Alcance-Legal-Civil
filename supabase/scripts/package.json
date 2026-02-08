@@ -1,0 +1,15 @@
+{
+    "name": "alcance-legal-supabase-scripts",
+    "version": "1.0.0",
+    "description": "Scripts para gestionar la base de datos vectorial de Alcance Legal",
+    "type": "module",
+    "scripts": {
+        "cargar": "node cargar_criterios.js",
+        "test": "node test_busqueda.js"
+    },
+    "dependencies": {
+        "@supabase/supabase-js": "^2.45.0",
+        "openai": "^4.60.0",
+        "dotenv": "^16.4.5"
+    }
+}

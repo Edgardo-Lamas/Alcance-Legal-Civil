@@ -1,11 +1,19 @@
 /**
  * Servicio de API para Alcance Legal
  * 
- * Maneja las comunicaciones con n8n webhooks.
- * Actualmente usa respuestas mockeadas para desarrollo.
+ * Maneja las comunicaciones con Supabase Edge Functions y n8n webhooks.
+ * Usa Edge Function para análisis con RAG vectorial.
  */
 
-// Configuración de endpoints n8n
+// Configuración de Supabase Edge Functions
+const SUPABASE_CONFIG = {
+    url: import.meta.env.VITE_SUPABASE_URL,
+    anonKey: import.meta.env.VITE_SUPABASE_ANON_KEY,
+    functionsUrl: import.meta.env.VITE_SUPABASE_URL ?
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1` : null
+}
+
+// Configuración de endpoints n8n (legacy/fallback)
 const N8N_CONFIG = {
     baseUrl: import.meta.env.VITE_N8N_BASE_URL || 'http://localhost:5678/webhook',
     endpoints: {
@@ -203,87 +211,116 @@ class AlcanceLegalAPI {
 
     /**
      * Envía consulta de análisis
+     * Flujo: Edge Function Supabase → (fallback) RAG local
      * @param {Object} data - Datos del formulario de análisis
      * @returns {Promise<Object>} - Respuesta del análisis
      */
     async analizarCaso(data) {
-        if (this.config.useMocks) {
-            await simulateLatency()
+        // Intentar Edge Function de Supabase primero
+        if (SUPABASE_CONFIG.functionsUrl && !this.config.useMocks) {
+            try {
+                console.log('[API] Llamando Edge Function analizar...')
 
-            // Usar RAG local v0.1
-            const { analizarConCriterios, getVersion, ADVERTENCIAS_OBLIGATORIAS } = await import('./rag.js')
-            const analisis = analizarConCriterios(data)
-            const ragVersion = getVersion()
-
-            // Construir respuesta en formato de informe profesional
-            const numeroInforme = `ALC-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 100000)).padStart(6, '0')}`
-
-            // Generar síntesis basada en análisis
-            const elementosPresentes = analisis.elementos_evaluados.filter(e => e.presente)
-            const elementosFaltantes = analisis.elementos_faltantes
-
-            let sintesis = ''
-            if (elementosPresentes.length > 0) {
-                sintesis = `Se identifican ${elementosPresentes.length} de 4 elementos constitutivos de responsabilidad civil: ${elementosPresentes.map(e => e.elemento).join(', ')}.\n\n`
-            }
-            if (elementosFaltantes.length > 0) {
-                sintesis += `Requieren mayor desarrollo: ${elementosFaltantes.map(e => e.elemento).join(', ')}.`
-            }
-
-            // Construir fundamentos desde criterios utilizados
-            const fundamentos = analisis.elementos_evaluados
-                .filter(e => e.fundamento)
-                .map(e => ({
-                    tipo: 'criterio_rag',
-                    fuente: `${e.fundamento.normativo?.[0]?.cuerpo || 'CCyC'} arts. ${e.fundamento.normativo?.[0]?.articulos?.join(', ') || ''}`,
-                    extracto: e.fundamento.criterio,
-                    relevancia: e.observaciones[0] || 'Aplicado al análisis del caso.'
-                }))
-
-            return {
-                success: true,
-                data: {
-                    numero_informe: numeroInforme,
-                    fecha_emision: new Date().toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' }),
-                    estado: 'INFORME PRELIMINAR',
-                    estado_detalle: 'Pendiente de validación por el profesional actuante',
-                    version_rag: ragVersion.version,
-                    criterios_aplicados: ragVersion.criterios_activos,
-                    viabilidad: {
-                        valor: analisis.viabilidad.valor,
-                        clasificacion: analisis.viabilidad.clasificacion,
-                        explicacion: analisis.viabilidad.explicacion,
-                        advertencia_metodologica: 'Esta evaluación se basa exclusivamente en la información proporcionada y en los 4 elementos constitutivos de responsabilidad civil. Factores no declarados pueden alterar sustancialmente el pronóstico.'
+                const response = await fetch(`${SUPABASE_CONFIG.functionsUrl}/analizar`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${SUPABASE_CONFIG.anonKey}`,
+                        'apikey': SUPABASE_CONFIG.anonKey
                     },
-                    sintesis,
-                    elementos_evaluados: analisis.elementos_evaluados.map(e => ({
-                        elemento: e.elemento,
-                        presente: e.presente,
-                        confianza: e.confianza,
-                        observaciones: e.observaciones
-                    })),
-                    fundamentos,
-                    riesgos: analisis.riesgos_detectados.map((r, idx) => ({
-                        nivel: r.nivel,
-                        codigo: `R-${String(idx + 1).padStart(3, '0')}`,
-                        descripcion: r.descripcion,
-                        fuente: r.fuente,
-                        urgencia: r.nivel === 'alto'
-                    })),
-                    advertencias: {
-                        principal: 'Este informe NO constituye consejo legal definitivo. Es un insumo técnico basado en criterios generales que debe ser validado por el profesional actuante.',
-                        items: ADVERTENCIAS_OBLIGATORIAS
-                    },
-                    _meta: {
-                        rag_version: ragVersion.version,
-                        criterios_activos: ragVersion.criterios_activos.length,
-                        estado_rag: ragVersion.estado
-                    }
+                    body: JSON.stringify(data)
+                })
+
+                if (!response.ok) {
+                    throw new Error(`Edge Function error: ${response.status}`)
                 }
+
+                const result = await response.json()
+                console.log('[API] Edge Function respondió correctamente')
+                return result
+
+            } catch (error) {
+                console.warn('[API] Edge Function falló, usando RAG local:', error.message)
+                // Continuar con fallback
             }
         }
 
-        return this._post(this.config.endpoints.analizar, data)
+        // Fallback: RAG local (modo desarrollo o si Edge Function falla)
+        console.log('[API] Usando RAG local...')
+        await simulateLatency()
+
+        // Usar RAG local v0.1
+        const { analizarConCriterios, getVersion, ADVERTENCIAS_OBLIGATORIAS } = await import('./rag.js')
+        const analisis = analizarConCriterios(data)
+        const ragVersion = getVersion()
+
+        // Construir respuesta en formato de informe profesional
+        const numeroInforme = `ALC-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 100000)).padStart(6, '0')}`
+
+        // Generar síntesis basada en análisis
+        const elementosPresentes = analisis.elementos_evaluados.filter(e => e.presente)
+        const elementosFaltantes = analisis.elementos_faltantes
+
+        let sintesis = ''
+        if (elementosPresentes.length > 0) {
+            sintesis = `Se identifican ${elementosPresentes.length} de 4 elementos constitutivos de responsabilidad civil: ${elementosPresentes.map(e => e.elemento).join(', ')}.\n\n`
+        }
+        if (elementosFaltantes.length > 0) {
+            sintesis += `Requieren mayor desarrollo: ${elementosFaltantes.map(e => e.elemento).join(', ')}.`
+        }
+
+        // Construir fundamentos desde criterios utilizados
+        const fundamentos = analisis.elementos_evaluados
+            .filter(e => e.fundamento)
+            .map(e => ({
+                tipo: 'criterio_rag',
+                fuente: `${e.fundamento.normativo?.[0]?.cuerpo || 'CCyC'} arts. ${e.fundamento.normativo?.[0]?.articulos?.join(', ') || ''}`,
+                extracto: e.fundamento.criterio,
+                relevancia: e.observaciones[0] || 'Aplicado al análisis del caso.'
+            }))
+
+        return {
+            success: true,
+            data: {
+                numero_informe: numeroInforme,
+                fecha_emision: new Date().toLocaleDateString('es-AR', { year: 'numeric', month: 'long', day: 'numeric' }),
+                estado: 'INFORME PRELIMINAR',
+                estado_detalle: 'Pendiente de validación por el profesional actuante',
+                version_rag: ragVersion.version,
+                criterios_aplicados: ragVersion.criterios_activos,
+                viabilidad: {
+                    valor: analisis.viabilidad.valor,
+                    clasificacion: analisis.viabilidad.clasificacion,
+                    explicacion: analisis.viabilidad.explicacion,
+                    advertencia_metodologica: 'Esta evaluación se basa exclusivamente en la información proporcionada y en los 4 elementos constitutivos de responsabilidad civil. Factores no declarados pueden alterar sustancialmente el pronóstico.'
+                },
+                sintesis,
+                elementos_evaluados: analisis.elementos_evaluados.map(e => ({
+                    elemento: e.elemento,
+                    presente: e.presente,
+                    confianza: e.confianza,
+                    observaciones: e.observaciones
+                })),
+                fundamentos,
+                riesgos: analisis.riesgos_detectados.map((r, idx) => ({
+                    nivel: r.nivel,
+                    codigo: `R-${String(idx + 1).padStart(3, '0')}`,
+                    descripcion: r.descripcion,
+                    fuente: r.fuente,
+                    urgencia: r.nivel === 'alto'
+                })),
+                advertencias: {
+                    principal: 'Este informe NO constituye consejo legal definitivo. Es un insumo técnico basado en criterios generales que debe ser validado por el profesional actuante.',
+                    items: ADVERTENCIAS_OBLIGATORIAS
+                },
+                _meta: {
+                    rag_version: ragVersion.version,
+                    criterios_activos: ragVersion.criterios_activos.length,
+                    estado_rag: ragVersion.estado,
+                    source: 'local_fallback'
+                }
+            }
+        }
     }
 
     /**
