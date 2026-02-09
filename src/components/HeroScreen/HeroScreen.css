@@ -1,0 +1,209 @@
+.hero-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a2234 0%, #0d1421 50%, #1a2234 100%);
+    color: #ffffff;
+    animation: heroFadeIn 0.8s ease-out;
+    overflow: hidden;
+}
+
+.hero-screen::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(74, 124, 148, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(74, 124, 148, 0.1) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.hero-screen--exiting {
+    animation: heroFadeOut 0.5s ease-out forwards;
+}
+
+.hero-screen__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    z-index: 1;
+    animation: heroContentSlideUp 0.8s ease-out 0.2s both;
+}
+
+.hero-screen__logo {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(232, 213, 163, 0.08) 100%);
+    border: 2px solid rgba(201, 162, 39, 0.5);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    animation: logoPulse 3s ease-in-out infinite;
+}
+
+.hero-screen__logo svg {
+    width: 56px;
+    height: 56px;
+    stroke: #C9A227;
+    color: #C9A227;
+}
+
+.hero-screen__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #b8c9d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-screen__tagline {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.hero-screen__badge {
+    background: rgba(74, 124, 148, 0.2);
+    border: 1px solid rgba(74, 124, 148, 0.4);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 3rem;
+    letter-spacing: 0.05em;
+}
+
+.hero-screen__cta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #4a7c94 0%, #3a6c84 100%);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(74, 124, 148, 0.3);
+}
+
+.hero-screen__cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(74, 124, 148, 0.4);
+}
+
+.hero-screen__cta:active {
+    transform: translateY(0);
+}
+
+.hero-screen__cta svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.hero-screen__cta:hover svg {
+    transform: translateX(4px);
+}
+
+.hero-screen__footer {
+    position: absolute;
+    bottom: 2rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-screen__footer p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Animations */
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes heroFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes heroContentSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 30px rgba(201, 162, 39, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgba(201, 162, 39, 0.45);
+    }
+}
+
+/* Media queries */
+@media (min-width: 769px) {
+
+    /* On desktop, this component shouldn't render, but if it does, hide it */
+    .hero-screen {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-screen__title {
+        font-size: 2rem;
+    }
+
+    .hero-screen__tagline {
+        font-size: 1rem;
+    }
+
+    .hero-screen__logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero-screen__logo svg {
+        width: 44px;
+        height: 44px;
+    }
+}
