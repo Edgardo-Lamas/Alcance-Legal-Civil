@@ -26,19 +26,35 @@ const manualContent = {
         title: 'Guía de Navegación',
         sections: [
             {
-                title: '1. Concepto de la Consola',
-                content: 'Estructurada en flujos de trabajo específicos (Analizar, Auditar, Redactar) para garantizar precisión jurídica.'
+                title: '🔍 Analizar Caso',
+                content: 'Use esta opción al recibir un cliente nuevo. Ingrese la situación fáctica detallada, la pretensión y la documentación disponible. Recibirá un índice de viabilidad, análisis de elementos constitutivos y riesgos detectados.'
             },
             {
-                title: '2. Flujo Recomendado',
-                content: '1. Analice el caso -> 2. Audite su Estrategia -> 3. Redacte el Borrador.'
+                title: '📋 Auditar Estrategia',
+                content: 'Para cuando ya tiene una teoría del caso. Describa su línea argumental y etapa procesal. Recibirá un dictamen de consistencia, supuestos implícitos e inconsistencias.'
             },
             {
-                title: '3. Indicadores visuales',
+                title: '✍️ Redactar Escrito',
+                content: 'Genera borradores estructurados con secciones profesionales. Las partes pendientes se marcan claramente. TODO borrador requiere revisión profesional obligatoria.'
+            },
+            {
+                title: '📊 Flujo Recomendado',
+                content: '1° Analice → 2° Audite → 3° Redacte. Este orden evita invertir tiempo en casos inviables y asegura coherencia entre estrategia y documento.'
+            },
+            {
+                title: '🚦 Indicadores',
                 items: [
-                    { label: 'Rojo (Crítico)', detail: 'Riesgos inmediatos o plazos procesales.' },
-                    { label: 'Amarillo (Advertencia)', detail: 'Elementos a profundizar.' },
-                    { label: 'Verde (Consistencia)', detail: 'Fundamentación sólida.' }
+                    { label: 'Rojo (Crítico)', detail: 'Atención inmediata: prescripción, plazos procesales.' },
+                    { label: 'Amarillo (Advertencia)', detail: 'Elemento a profundizar o validar con el cliente.' },
+                    { label: 'Verde (Consistencia)', detail: 'Fundamentación sólida, puede avanzar.' }
+                ]
+            },
+            {
+                title: '❓ Preguntas Frecuentes',
+                items: [
+                    { label: '¿Puedo usar borradores directamente?', detail: 'No. Son puntos de partida que requieren su criterio profesional.' },
+                    { label: '¿Qué fueros cubre?', detail: 'Solo Fuero Civil. Penal está expresamente excluido.' },
+                    { label: '¿Y si rechaza mi consulta?', detail: 'Revise el mensaje y reformule con más información.' }
                 ]
             }
         ]
